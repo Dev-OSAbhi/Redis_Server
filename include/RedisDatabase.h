@@ -47,6 +47,10 @@ public:
     ssize_t hlen(const std::string& key);
     bool hmset(const std::string& key, const std::vector<std::pair<std::string, std::string>>& fieldValues);
 
+    // Persistance: Dump / load the database from a file.
+    bool dump(const std::string& filename);
+    bool load(const std::string& filename);
+
 private:
     RedisDatabase() = default;
     ~RedisDatabase() = default;
